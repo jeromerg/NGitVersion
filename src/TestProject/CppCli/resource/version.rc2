@@ -1,0 +1,35 @@
+// version file to add into C++ project (native or CLI) to add version meta-data to dll
+#include "windows.h"
+#include "NativeVersion.generated.h" // reference here the local copy of the NativeVersion.generated.h
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION FILEVER
+ PRODUCTVERSION PRODUCTVER
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080004b0"
+        BEGIN
+            VALUE "CompanyName", STRCOMPANYNAME
+			VALUE "FileDescription", "TODO ADD FileDescription"
+            VALUE "FileVersion", STRFILEVER
+            //VALUE "InternalName", "TODO ADD InternalName"
+            VALUE "LegalCopyright", STRLEGALCOPYRIGHT
+            //VALUE "OriginalFilename", "TODO ADD OriginalFilename"
+            VALUE "ProductName", STRPRODUCTNAME
+            VALUE "ProductVersion", STRPRODUCTVER
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x800, 1200
+    END
+END
