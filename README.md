@@ -1,4 +1,4 @@
 NGitVersion
 ===========
 
-Automatic versioning of C# and C++ CLI DLLs based on Git Repository information
+Automatic versioning of C# and C++ (CLI and Native) DLLs based on Git Repository information
