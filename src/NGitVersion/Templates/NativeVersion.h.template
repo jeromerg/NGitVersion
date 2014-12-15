@@ -24,10 +24,10 @@
 // 
 // 9. Remark: DO NOT ADD ANY *.generated.* file into source control repository!
 
-#define FILEVER        <major>,<minor>,<build>,<revision>
-#define PRODUCTVER     <major>,<minor>,<build>,<revision>
-#define STRFILEVER     "<major>,<minor>,<build>,<revision>\0"
-#define STRPRODUCTVER  "<major>,<minor>,<build>,<revision>\0"
-#define STRCOMPANYNAME "TODO SET COMPANY NAME"
-#define STRPRODUCTNAME "TODO SET PRODUCT NAME"
-#define STRLEGALCOPYRIGHT "TODO SET COPYRIGHT"
+#define FILEVER        <MAJOR>,<MINOR>,<BUILD>,<revision>
+#define PRODUCTVER     <MAJOR>,<MINOR>,<BUILD>,<revision>
+#define STRFILEVER     "<MAJOR>,<MINOR>,<BUILD>,<revision>\0"
+#define STRPRODUCTVER  "<MAJOR>,<MINOR>,<BUILD>,<revision>\0"
+#define STRCOMPANYNAME <COMPANY>
+#define STRPRODUCTNAME <PRODUCT>
+#define STRLEGALCOPYRIGHT <COPYRIGHT>

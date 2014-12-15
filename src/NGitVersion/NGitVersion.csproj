@@ -34,6 +34,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr4.StringTemplate">
+      <HintPath>..\packages\Antlr4.StringTemplate.4.0.6.9004\lib\net35\Antlr4.StringTemplate.dll</HintPath>
+    </Reference>
     <Reference Include="NLog">
       <HintPath>..\packages\NLog.3.1.0.0\lib\net40\NLog.dll</HintPath>
     </Reference>
@@ -47,12 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Result\GlobalAssemblyInfo.generated.cs" />
+    <Compile Include="Templates\SharedTemplateInfo.cs" />
     <Compile Include="Util\Git\GitLog.cs" />
     <Compile Include="Util\Git\GitCommit.cs" />
-    <Compile Include="Util\Git\GitExe.cs" />
+    <Compile Include="Util\Git\GitRepository.cs" />
     <Compile Include="NGitVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Template\NativeVersion.h.template" />
+    <None Include="Templates\NativeVersion.h.template" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -60,8 +64,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Template\GlobalAssemblyInfo.cpp.template" />
-    <None Include="Template\GlobalAssemblyInfo.cs.template" />
+    <None Include="Templates\GlobalAssemblyInfo.cpp.template" />
+    <None Include="Templates\GlobalAssemblyInfo.cs.template" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

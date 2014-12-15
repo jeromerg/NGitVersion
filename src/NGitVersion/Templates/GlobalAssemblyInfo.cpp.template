@@ -38,17 +38,17 @@ using namespace System::Runtime::CompilerServices;
 using namespace System::Runtime::InteropServices;
 using namespace System::Security::Permissions;
 
-[assembly:AssemblyCompanyAttribute("TODO SET COMPANY NAME")];
-[assembly:AssemblyProductAttribute("TODO SET PRODUCT NAME")];
-[assembly:AssemblyCopyrightAttribute("TODO SET COPYRIGHT")];
+[assembly:AssemblyCompanyAttribute(<COMPANY>)];
+[assembly:AssemblyProductAttribute(<PRODUCT>)];
+[assembly:AssemblyCopyrightAttribute(<COPYRIGHT>)];
 [assembly:AssemblyCultureAttribute("")]; // non localized main assemblies
 
 //---- VERSION DEPENDENT FIELDS
-[assembly:AssemblyVersionAttribute("<major>.<minor>.<build>.<revision>")];
-[assembly:AssemblyFileVersion("<major>.<minor>.<build>.<revision>")];
+[assembly:AssemblyVersionAttribute("<MAJOR>.<MINOR>.<BUILD>.<revision>")];
+[assembly:AssemblyFileVersion("<MAJOR>.<MINOR>.<BUILD>.<revision>")];
 
 #ifdef DEBUG
-[assembly:AssemblyInformationalVersion("<major>.<minor>.<build>.<revision> - <shortHash> DEBUG <hasLocalChange>")];
+[assembly:AssemblyInformationalVersion("<MAJOR>.<MINOR>.<BUILD>.<revision> - <shortHash> DEBUG <localChangeInfo>")];
 #else
-[assembly:AssemblyInformationalVersion("<major>.<minor>.<build>.<revision> - <shortHash><hasLocalChange>")];
+[assembly:AssemblyInformationalVersion("<MAJOR>.<MINOR>.<BUILD>.<revision> - <shortHash><localChangeInfo>")];
 #endif

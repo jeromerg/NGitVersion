@@ -33,17 +33,17 @@ using System.Runtime.InteropServices;
 
 #endregion
 
-[assembly: AssemblyCompany("TODO SET COMPANY NAME")]
-[assembly: AssemblyProduct("TODO SET PRODUCT NAME")]
-[assembly: AssemblyCopyright("TODO SET COPYRIGHT")]
+[assembly: AssemblyCompany(<COMPANY>)]
+[assembly: AssemblyProduct(<PRODUCT>)]
+[assembly: AssemblyCopyright(<COPYRIGHT>)]
 [assembly: AssemblyCulture("")] // non localized main assemblies
 
 //---- VERSION DEPENDENT FIELDS
-[assembly:AssemblyVersion("<major>.<minor>.<build>.<revision>")]
-[assembly:AssemblyFileVersion("<major>.<minor>.<build>.<revision>")]
+[assembly:AssemblyVersion("<MAJOR>.<MINOR>.<BUILD>.<revision>")]
+[assembly:AssemblyFileVersion("<MAJOR>.<MINOR>.<BUILD>.<revision>")]
 
 #if DEBUG
-[assembly:AssemblyInformationalVersion("<major>.<minor>.<build>.<revision> - <shortHash> DEBUG <hasLocalChange>")]
+[assembly:AssemblyInformationalVersion("<MAJOR>.<MINOR>.<BUILD>.<revision> - <shortHash> DEBUG <localChangeInfo>")]
 #else
-[assembly:AssemblyInformationalVersion("<major>.<minor>.<build>.<revision> - <shortHash><hasLocalChange>")]
+[assembly:AssemblyInformationalVersion("<MAJOR>.<MINOR>.<BUILD>.<revision> - <shortHash><localChangeInfo>")]
 #endif
