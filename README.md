@@ -6,7 +6,7 @@ Lightweight solution to support git-based Automatic versioning of C# and C++ (CL
 Usage
 -----
 1. Copy the *NGitVersion* project into your visual studio project structure
-2. Add version-support to your existing projects by following the instructions described in the file [NGitVersion/src/NGitVersion/Readme.md](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/Readme.md)
+2. Add version-support to your existing projects by following the instructions described in the file [NGitVersion/src/NGitVersion/Resource/Readme.md](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/Resource/Readme.md)
 3. If needed, change the Major, Minor or Build Versions, by editing the constants in file [NGitVersion/src/NGitVersion/NGitVersion.cs](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/NGitVersion.cs).
 
 *NGitVersion* sets automatically the "revision number", the fourth placeholder of the version scheme.
