@@ -34,8 +34,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\NGitVersion\Result\GlobalAssemblyInfo.generated.cs">
-      <Link>Properties\GlobalAssemblyInfo.generated.cs</Link>
+    <Compile Include="..\..\NGitVersion\Generated\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

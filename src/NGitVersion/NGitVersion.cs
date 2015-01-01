@@ -1,44 +1,47 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.IO;
 using System.Linq;
 using Antlr4.StringTemplate;
 using LibGit2Sharp;
 
 namespace NGitVersion {
-    public static class NGitVersion {
+    public static class NGitVersion
+    {
+
+        private const string MODEL_VAR = @"m";
 
         // directories are relative to output project directory ${ProjectDir}\bin
-        private const string TEMPLATE_DIR = @"..\Templates\";
-        private const string TEMPLATE_FILE_PREFIX = @"File_";
-        private const string OUTPUT_DIR = @"..\Result\";
+        private const string TEMPLATE_DIR = @"..\..\Templates\";
+        private const string OUTPUT_DIR = @"..\..\Generated\";
+        private const string MAIN_TEMPLATE_NAME = @"MainTemplate";
 
-        public static void Main(string [] args)
+        /// <summary> expected: 1 argument providing the path to the git repository </summary>
+        public static void Main(string[] args)
         {
-            //git rev-list HEAD --count
-            var builtInVars = new Dictionary<string, object> { { "git", new LibGit2Sharp.Repository(".") } };
+            if(args.Length != 1)
+                throw new ArgumentException("expected: 1 argument providing the path to the git repository");
 
-            foreach (var templateFile in Directory.GetFiles(TEMPLATE_DIR, TEMPLATE_FILE_PREFIX + "*.stg"))
-                ProcessTemplate(templateFile, builtInVars);
+            var model = new Model.Model(new Repository(args[0]));
+
+            Directory.GetFiles(TEMPLATE_DIR, "*.stg")
+                     .Select(Path.GetFullPath)
+                     .ToList()
+                     .ForEach(templateFile => ProcessTemplate(templateFile, model));
         }
 
-        private static void ProcessTemplate(string templateFile, Dictionary<string, object> builtInVars)
+        private static void ProcessTemplate(string templateFile, Model.Model model)
         {
             Template template = new TemplateGroupFile(templateFile)
-                                        .GetInstanceOf(Path.GetFileNameWithoutExtension(templateFile));
+                .GetInstanceOf(MAIN_TEMPLATE_NAME);
 
-            foreach (var v in builtInVars)
-                template.Add(v.Key, v.Value);
+            template.Add(MODEL_VAR, model);
 
-            File.WriteAllText(BuildTargetFile(templateFile), template.Render());
+            File.WriteAllText(BuildTargetFileName(templateFile), template.Render());
         }
 
-        private static string BuildTargetFile(string templateFile)
+        private static string BuildTargetFileName(string templateFile)
         {
-            string outputFileName
-                = Path.GetFileNameWithoutExtension(templateFile)
-                      .Replace(TEMPLATE_FILE_PREFIX, "")
-                      .Replace("_", ".");
-
+            string outputFileName = Path.GetFileNameWithoutExtension(templateFile);
             return OUTPUT_DIR + outputFileName;
         }
     }

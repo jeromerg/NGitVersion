@@ -62,7 +62,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy /Y "$(ProjectDir)..\..\NGitVersion\Result\NativeVersion.generated.h" "$(ProjectDir)resource\"
+      <Command>xcopy /Y "$(ProjectDir)..\..\NGitVersion\Generated\GlobalNativeAssemblyInfo.h" "$(ProjectDir)resource\"
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -83,7 +83,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy /Y "$(ProjectDir)..\..\NGitVersion\Result\NativeVersion.generated.h" "$(ProjectDir)resource\"
+      <Command>xcopy /Y "$(ProjectDir)..\..\NGitVersion\Generated\GlobalNativeAssemblyInfo.h" "$(ProjectDir)resource\"
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -91,7 +91,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource\NativeVersion.generated.h" />
+    <ClInclude Include="resource\GlobalNativeAssemblyInfo.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

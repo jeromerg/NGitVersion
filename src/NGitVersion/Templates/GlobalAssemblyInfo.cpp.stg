@@ -1,0 +1,20 @@
+﻿MainTemplate(m) ::= <<
+	#include "stdafx.h"
+
+	using namespace System;
+	using namespace System::Reflection;
+	using namespace System::Runtime::CompilerServices;
+	using namespace System::Runtime::InteropServices;
+	using namespace System::Security::Permissions;
+
+	[assembly:AssemblyCompanyAttribute("<m.Company>")];
+	[assembly:AssemblyProductAttribute("<m.Product>")];
+	[assembly:AssemblyCopyrightAttribute("<m.Copyright>")];
+	[assembly:AssemblyCultureAttribute("")]; // non localized main assemblies
+
+	//---- VERSION DEPENDENT FIELDS
+	[assembly:AssemblyVersionAttribute("<m.Major>.<m.Minor>.<m.Build>.<m.Revision>")];
+	[assembly:AssemblyFileVersion("<m.Major>.<m.Minor>.<m.Build>.<m.Revision>")];
+	[assembly:AssemblyInformationalVersion("<m.Major>.<m.Minor>.<m.Build>.<m.Revision>, Hash <m.ShortHash>, BuildConfig <m.BuildConfig>, HasLocalChange <m.HasLocalChange>")];
+
+>>

@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>bin\debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>bin\release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Result\GlobalAssemblyInfo.generated.cs" />
-    <None Include="Templates\StaticInfo.stg" />
+    <Compile Include="Model\Model.cs" />
     <Compile Include="NGitVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Templates\File_NativeVersion_h.stg" />
+    <None Include="Resource\Readme.md" />
+    <None Include="Templates\NativeVersion.h.stg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -63,26 +63,26 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Templates\File_GlobalAssemblyInfo_cpp.stg" />
-    <None Include="Templates\File_GlobalAssemblyInfo_cs.stg" />
+    <None Include="Templates\GlobalAssemblyInfo.cpp.stg" />
+    <None Include="Templates\GlobalAssemblyInfo.cs.stg" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Readme.md" />
     <None Include="Resource\version.rc2" />
-    <Content Include="Result\NativeVersion.generated.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Result\GlobalAssemblyInfo.generated.cpp" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Generated\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>"$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>"$(TargetPath)" ..\..\..\..\</PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

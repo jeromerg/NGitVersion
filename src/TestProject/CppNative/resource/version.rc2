@@ -1,6 +1,6 @@
 // version file to add into C++ project (native or CLI) to add version meta-data to dll
 #include "windows.h"
-#include "NativeVersion.generated.h" // reference here the local copy of the NativeVersion.generated.h
+#include "GlobalNativeAssemblyInfo.h" // reference here the local copy of the NativeVersion.generated.h
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION FILEVER
  PRODUCTVERSION PRODUCTVER
