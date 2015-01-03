@@ -12,6 +12,6 @@
 	[assembly:AssemblyCultureAttribute("")]; // non localized main assemblies
 
 	//---- VERSION DEPENDENT FIELDS
-	[assembly:AssemblyVersionAttribute("0.0.0.12")];
-	[assembly:AssemblyFileVersion("0.0.0.12")];
-	[assembly:AssemblyInformationalVersion("0.0.0.12, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True")];
+	[assembly:AssemblyVersionAttribute("0.0.0.14")];
+	[assembly:AssemblyFileVersion("0.0.0.14")];
+	[assembly:AssemblyInformationalVersion("0.0.0.14, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True")];

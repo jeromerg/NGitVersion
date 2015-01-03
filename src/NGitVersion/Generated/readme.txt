@@ -1,0 +1,1 @@
+template engine copies generated files into this folder during compilation post-build

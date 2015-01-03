@@ -4,7 +4,8 @@ using System.Linq;
 using Antlr4.StringTemplate;
 using LibGit2Sharp;
 
-namespace NGitVersion {
+namespace NGitVersion
+{
     public static class NGitVersion
     {
 
@@ -15,13 +16,9 @@ namespace NGitVersion {
         private const string OUTPUT_DIR = @"..\..\Generated\";
         private const string MAIN_TEMPLATE_NAME = @"MainTemplate";
 
-        /// <summary> expected: 1 argument providing the path to the git repository </summary>
         public static void Main(string[] args)
         {
-            if(args.Length != 1)
-                throw new ArgumentException("expected: 1 argument providing the path to the git repository");
-
-            var model = new Model.Model(new Repository(args[0]));
+            var model = new Model.Model(new Repository(GetGitRoot()));
 
             Directory.GetFiles(TEMPLATE_DIR, "*.stg")
                      .Select(Path.GetFullPath)
@@ -37,6 +34,23 @@ namespace NGitVersion {
             template.Add(MODEL_VAR, model);
 
             File.WriteAllText(BuildTargetFileName(templateFile), template.Render());
+        }
+
+        private static string GetGitRoot()
+        {
+            const string gitDir = ".git";
+            string hierarchy = @".\";
+            while (true)
+            {
+                bool exists = Directory.Exists(hierarchy + gitDir);
+                if (exists)
+                    return hierarchy;
+
+                hierarchy = hierarchy + @"..\";
+
+                if (!Directory.Exists(hierarchy))
+                    throw new ApplicationException("No .git folder found in the current path hierarchy");
+            }
         }
 
         private static string BuildTargetFileName(string templateFile)
