@@ -13,8 +13,8 @@ Usage
 The resulting two assembly version fields *File Version* and *Product Version* have the following patterns:
 - *File Version*: (Example: `1.0.0.752`). It has the following pattern `MAJOR.MINOR.BUILD.GitIncrementalVersion`
 Where 
-    - `MAJOR`, `MINOR`, `BUILD` are constants defined in the *NGitVersion* project
-    - `GitIncrementalVersion` is the amount of commit from the root of all commits to the current commit
+    - `MAJOR`, `MINOR`, `BUILD` are constants defined in the *Model.cs* file
+    - `GitIncrementalVersion` is the amount of commit from the root to the current commit
 - *Product Version*: (Example: `0.0.0.12, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True`). It contains additionally to the *File Version*:
     - The git "short hash" of the local checked-out commit 
     - The build configuration (DEBUG / RELEASE)
