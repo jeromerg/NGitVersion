@@ -5,8 +5,8 @@ MainTemplate(m) ::= <<
 #define PRODUCTVER     <m.Major>,<m.Minor>,<m.Build>,<m.Revision>
 #define STRFILEVER     "<m.Major>,<m.Minor>,<m.Build>,<m.Revision>\0"
 #define STRPRODUCTVER  "<m.Major>,<m.Minor>,<m.Build>,<m.Revision>\0"
-#define STRCOMPANYNAME <m.Company>
-#define STRPRODUCTNAME <m.Product>
-#define STRLEGALCOPYRIGHT <m.Copyright>
+#define STRCOMPANYNAME "<m.Company>"
+#define STRPRODUCTNAME "<m.Product>"
+#define STRLEGALCOPYRIGHT "<m.Copyright>"
 
 >>

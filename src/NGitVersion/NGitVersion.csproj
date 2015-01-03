@@ -57,7 +57,7 @@
     <Compile Include="NGitVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resource\Readme.md" />
-    <None Include="Templates\NativeVersion.h.stg" />
+    <None Include="Templates\GlobalNativeAssemblyInfo.h.stg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
