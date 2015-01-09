@@ -82,7 +82,8 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>"$(TargetPath)" ..\..\..\..\</PostBuildEvent>
+    <PostBuildEvent>echo Now executing $(TargetPath) 
+"$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
