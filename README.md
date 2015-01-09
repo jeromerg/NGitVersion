@@ -38,5 +38,5 @@ git subtree add --prefix src/Version https://github.com/jeromerg/NGitVersion mas
 It creates a folder `MyGitRep/src/Version` and pull the `NGitVersion` git repository into it. You can later update/upgrade the code, with the following command:
 
 ```
-git subtree pull src/Version https://github.com/jeromerg/NGitVersion master --squash
+git subtree pull --prefix src/Version https://github.com/jeromerg/NGitVersion master --squash
 ```
