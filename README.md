@@ -22,8 +22,13 @@ You can easily edit/add the provided templates or add new features.
 Usage
 -----
 1. Copy the *NGitVersion* project into your visual studio project structure
-2. Add version-support to your existing projects. Follow instructions here: [NGitVersion/src/NGitVersion/Resource/Readme.md](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/Resource/Readme.md)
-3. If needed customize:
+2. Fix the path to packages folder with the `NGitVersion` project
+    - Open `NGitVersion.csproj` with a text editor
+    - search and replace `..\packages\` by the relative path to your path
+    - Alternative: remove/re-install nuget-dependency `Antlr4.StringTemplate` and `LibGit2Sharp` 
+3. Build the *NGitVersion* project within the solution, to check that it compiles well
+4. For each of your project, add version-support by following the instructions: [NGitVersion/src/NGitVersion/Resource/Readme.md](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/Resource/Readme.md)
+4. If needed customize:
     - Edit major, minor, build versions, company name and so on, by editing the model file: [NGitVersion/src/NGitVersion/Model/Model.cs](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/Model/Model.cs)
     - Change/Add templates `*.*.stg` in folder: [NGitVersion/src/NGitVersion/Templates/](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/Templates/)
 
@@ -38,5 +43,5 @@ git subtree add --prefix src/Version https://github.com/jeromerg/NGitVersion mas
 It creates a folder `MyGitRep/src/Version` and pull the `NGitVersion` git repository into it. You can later update/upgrade the code, with the following command:
 
 ```
-git subtree pull src/Version https://github.com/jeromerg/NGitVersion master --squash
+git subtree pull --prefix src/Version https://github.com/jeromerg/NGitVersion master --squash
 ```
