@@ -27,3 +27,16 @@ Usage
     - Edit major, minor, build versions, company name and so on, by editing the model file: [NGitVersion/src/NGitVersion/Model/Model.cs](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/Model/Model.cs)
     - Change/Add templates `*.*.stg` in folder: [NGitVersion/src/NGitVersion/Templates/](https://github.com/jeromerg/NGitVersion/blob/master/src/NGitVersion/Templates/)
 
+Remark:
+
+At step 1. if you are confident with git subtree, you can clone the *NGitVersion* repository as a subtree:
+
+```
+git subtree add --prefix version https://github.com/jeromerg/NGitVersion master --squash
+```
+
+It creates a folder version and pull the this git repository into it. You can later update/upgrade the code, with the following command:
+
+```
+git subtree pull version https://github.com/jeromerg/NGitVersion master --squash
+```
