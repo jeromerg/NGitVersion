@@ -29,14 +29,14 @@ Usage
 
 Remark:
 
-At step 1. if you are confident with git subtree, you can clone the *NGitVersion* repository as a subtree:
+At step 1. if you are confident with git subtree, you can clone the *NGitVersion* repository as a subtree. In the root of your own git repository, call:
 
 ```
-git subtree add --prefix version https://github.com/jeromerg/NGitVersion master --squash
+git subtree add --prefix src/Version https://github.com/jeromerg/NGitVersion master --squash
 ```
 
-It creates a folder version and pull the this git repository into it. You can later update/upgrade the code, with the following command:
+It creates a folder `MyGitRep/src/Version` and pull the `NGitVersion` git repository into it. You can later update/upgrade the code, with the following command:
 
 ```
-git subtree pull version https://github.com/jeromerg/NGitVersion master --squash
+git subtree pull src/Version https://github.com/jeromerg/NGitVersion master --squash
 ```
