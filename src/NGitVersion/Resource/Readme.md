@@ -1,4 +1,4 @@
-﻿NGitVersion
+NGitVersion
 ===========
 
 Auto-increment your DLL versions based on git history.
@@ -19,7 +19,7 @@ Out-of-the-box *NGitVersion* populates your DLLs with the following versions:
 - Add more templates
 	-  i.e. commit-list file, patch-file of local changes 
 
-*NGitVersion* is based on the appreciated template engine [StringTemplate](https://github.com/antlr/stringtemplate4) and the git-client [LibGit2Sharp](https://github.com/libgit2/libgit2sharp). 
+*NGitVersion* is based on the template engine [StringTemplate](https://github.com/antlr/stringtemplate4) and the git-client [LibGit2Sharp](https://github.com/libgit2/libgit2sharp). 
 
 Usage
 -----
@@ -48,7 +48,7 @@ Typical issue: `Antlr4.StringTemplate` and `LibGit2Sharp` are not found: Fix the
 - Either search and fix `..\packages\` string within in the project file
 - Or remove/re-install nuget-dependencies `Antlr4.StringTemplate` and `LibGit2Sharp`
 
-The build generates files into the `src\NGitVersion\Generated\` folder. Check that they are populated properly with the model and git information. 
+The build generates files into the `src\NGitVersion\Generated\` folder. Check that they exist and are properly generated from the templates located in `src\NGitVersion\Templates\`.
 
 ### Upgrade your projects
 
