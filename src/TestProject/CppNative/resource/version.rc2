@@ -1,9 +1,10 @@
 // version file to add into C++ project (native or CLI) to add version meta-data to dll
 #include "windows.h"
-#include "GlobalNativeAssemblyInfo.h" // reference here the local copy of the NativeVersion.generated.h
+#include "../../../NGitVersion/Generated/GlobalAssemblyInfo.h"
+
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION FILEVER
- PRODUCTVERSION PRODUCTVER
+ FILEVERSION                VERSION_COMA  // FROM GlobalAssemblyInfo.h
+ PRODUCTVERSION             VERSION_COMA  // FROM GlobalAssemblyInfo.h
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -18,15 +19,26 @@ BEGIN
     BEGIN
         BLOCK "080004b0"
         BEGIN
-            VALUE "CompanyName", STRCOMPANYNAME
-			VALUE "FileDescription", "My FileDescription"
-            VALUE "FileVersion", STRFILEVER
-            //VALUE "InternalName", "TODO ADD InternalName"
-            VALUE "LegalCopyright", STRLEGALCOPYRIGHT
-            //VALUE "OriginalFilename", "TODO ADD OriginalFilename"
-            VALUE "ProductName", STRPRODUCTNAME
-            VALUE "ProductVersion", STRPRODUCTVER
-        END
+			// ----------------------------------------------------------------------
+			// LOCAL
+			// ----------------------------------------------------------------------
+
+			VALUE "FileDescription", "TODO DESCRIPTION"
+
+			// ----------------------------------------------------------------------
+			// GLOBAL
+			// ----------------------------------------------------------------------
+			VALUE "CompanyName"      , COMPANY
+			VALUE "ProductName"      , PRODUCT
+			VALUE "LegalCopyright"   , COPYRIGHT
+			VALUE "LegalTrademarks"  , TRADEMARK
+			VALUE "SpecialBuild"     , CONFIGURATION     
+			VALUE "FileVersion"      , FULL_VERSION
+            VALUE "ProductVersion"   , VERSION
+			
+			// Remark: "SpecialBuild" instead of "Configuration"
+			// Remark: Culture not relevant
+			END
     END
     BLOCK "VarFileInfo"
     BEGIN

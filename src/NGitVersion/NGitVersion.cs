@@ -28,12 +28,22 @@ namespace NGitVersion
 
         private static void ProcessTemplate(string templateFile, Model.Model model)
         {
-            Template template = new TemplateGroupFile(templateFile)
-                .GetInstanceOf(MAIN_TEMPLATE_NAME);
+            string targetFile = BuildTargetFileName(templateFile);
 
-            template.Add(MODEL_VAR, model);
+            Console.WriteLine("\ttemplate: " + templateFile);
+            try
+            {
+                Template template = new TemplateGroupFile(templateFile)
+                    .GetInstanceOf(MAIN_TEMPLATE_NAME);
 
-            File.WriteAllText(BuildTargetFileName(templateFile), template.Render());
+                template.Add(MODEL_VAR, model);
+
+                File.WriteAllText(targetFile, template.Render());
+            }
+            finally
+            {
+                Console.WriteLine("\toutput:   " + targetFile);
+            }
         }
 
         private static string GetGitRoot()
@@ -56,7 +66,7 @@ namespace NGitVersion
         private static string BuildTargetFileName(string templateFile)
         {
             string outputFileName = Path.GetFileNameWithoutExtension(templateFile);
-            return OUTPUT_DIR + outputFileName;
+            return Path.GetFullPath(OUTPUT_DIR + outputFileName);
         }
     }
 }

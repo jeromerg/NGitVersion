@@ -63,9 +63,8 @@
       <AdditionalDependencies />
     </Link>
     <PreBuildEvent>
-      <Command>xcopy /Y "$(ProjectDir)..\..\NGitVersion\Generated\GlobalNativeAssemblyInfo.h" "$(ProjectDir)resource\"
-xcopy /Y "$(ProjectDir)..\..\NGitVersion\Generated\GlobalAssemblyInfo.cpp" "$(ProjectDir)resource\"
-</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -92,13 +91,11 @@ xcopy /Y "$(ProjectDir)..\..\NGitVersion\Generated\GlobalAssemblyInfo.cpp" "$(Pr
   <ItemGroup>
     <ClInclude Include="CppCli.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="resource\GlobalNativeAssemblyInfo.h" />
     <ClInclude Include="Stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="resource\AssemblyInfo.cpp" />
     <ClCompile Include="CppCli.cpp" />
-    <ClCompile Include="resource\GlobalAssemblyInfo.cpp" />
     <ClCompile Include="Stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
