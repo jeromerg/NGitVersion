@@ -34,7 +34,7 @@ BEGIN
 			VALUE "LegalTrademarks"  , TRADEMARK
 			VALUE "SpecialBuild"     , CONFIGURATION     
 			VALUE "FileVersion"      , FULL_VERSION
-            VALUE "ProductVersion"   , VERSION
+            VALUE "ProductVersion"   , FULL_VERSION
 			
 			// Remark: "SpecialBuild" instead of "Configuration"
 			// Remark: Culture not relevant
