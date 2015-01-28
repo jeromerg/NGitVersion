@@ -30,18 +30,21 @@ namespace NGitVersion.Model
 #endif
         }
 
-        public string Company { get { return "TODO My Company"; } }
-        public string Product { get { return "TODO My Product"; } }
-        public string Copyright { get { return "TODO My Copyright"; } }
-        public string Major { get { return "0"; } }
-        public string Minor { get { return "0"; } }
-        public string Build { get { return "0"; } }
+        public string Company        { get { return "TODO Company"; } }
+        public string Product        { get { return "TODO Product"; } }
+        public string Copyright      { get { return "TODO Copyright"; } }
+        public string Trademark      { get { return "TODO Trademark"; } }
+        public string Culture        { get { return "TODO Culture"; } }
 
-        public string Revision { get { return mRevision.Value; } }
-        public string ShortHash { get { return mShortHash.Value; } }
-        public string Branch { get { return mBranch.Value; } }
+        public string Major          { get { return "0"; } } // TODO
+        public string Minor          { get { return "0"; } } // TODO
+        public string Build          { get { return "0"; } } // TODO
+
+        public string Revision       { get { return mRevision.Value; } }
+        public string ShortHash      { get { return mShortHash.Value; } }
+        public string Branch         { get { return mBranch.Value; } }
         public string HasLocalChange { get { return mHasLocalChange.Value; } }
-        public string BuildConfig { get { return mBuildConfig; } }
+        public string BuildConfig    { get { return mBuildConfig; } }
 
     }
 }

@@ -62,8 +62,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy /Y "$(ProjectDir)..\..\NGitVersion\Generated\GlobalNativeAssemblyInfo.h" "$(ProjectDir)resource\"
-</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

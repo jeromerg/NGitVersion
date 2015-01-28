@@ -55,7 +55,6 @@
     <Compile Include="NGitVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Resource\Readme.md" />
-    <None Include="Templates\GlobalNativeAssemblyInfo.h.stg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -63,7 +62,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Templates\GlobalAssemblyInfo.cpp.stg" />
     <None Include="Templates\GlobalAssemblyInfo.cs.stg" />
     <None Include="packages.config" />
   </ItemGroup>
