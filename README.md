@@ -5,21 +5,25 @@ Auto-increment your DLL versions based on git history.
 
 Out-of-the-box *NGitVersion* populates your DLLs with the following versions:
 
-- Short: `1.0.0.752`, where `752` is the *Git* auto-incremented version
-- Long: `1.0.0.752, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True`, where:
+- Assembly Version: `1.0.0.752`, where `752` is the *Git* auto-incremented version
+- Assembly Informational Version: `1.0.0.752, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True`, where:
     - `Hash` is the git "short hash" of the local checked-out commit 
     - `BuildConfig` is the build configuration (`DEBUG` / `RELEASE`)
     - `HasLocalChange` tells whether some file has been locally edited
 
-*NGitVersion* is only a few lines of code. You can easily:
+*NGitVersion* introduces a C# project called *NGitVersion* that generates on build two files `GLobalAssemblyInfo.cs` and `GLobalAssemblyInfo.cpp`. Just reference the *NGitVersion* project and `GlobalAssemblyInfo.*` files in your existing projects in order to get it work with your own DLLs.
 
-- Edit the templates, that generate the assembly metadata
-- Edit the underlying model (edit major version, product name...)
-- Extend the underlying model (get environment info like OS, tool version, date)
+*NGitVersion* is only a few lines of code. It is based on the template engine [StringTemplate](https://github.com/antlr/stringtemplate4) and the git-client [LibGit2Sharp](https://github.com/libgit2/libgit2sharp). 
+
+You can easily:
+
+- Edit the templates, that generate the `GLobalAssemblyInfo.*` files
+- Edit the underlying model `Model.cs` to change the major and minor version, product name...
+- Extend the underlying model
+    - to get more information from your Git repository (i.e. current branch, last commit description)
+    - to get additional information from your build environment, like OS version/architecture, tool version, date...
 - Add more templates
-	-  i.e. commit-list file, patch-file of local changes 
-
-*NGitVersion* is based on the template engine [StringTemplate](https://github.com/antlr/stringtemplate4) and the git-client [LibGit2Sharp](https://github.com/libgit2/libgit2sharp). 
+    -  i.e. to generate a file containing the commit-history, the git-patch for local changes 
 
 Usage
 -----
