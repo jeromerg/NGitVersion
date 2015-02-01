@@ -23,7 +23,7 @@ You can easily:
     - to get more information from your Git repository (i.e. current branch, last commit description)
     - to get additional information from your build environment, like OS version/architecture, tool version, date...
 - Add more templates
-    -  i.e. to generate a file containing the commit-history, the git-patch for local changes 
+    -  i.e. to generate a file containing the commit-history, the patch of the local changes 
 
 Usage
 -----
