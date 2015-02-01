@@ -76,9 +76,9 @@ From [MSDN](https://msdn.microsoft.com/en-us/library/47w1hdab.aspx): *If true, t
    - Uncheck "Properties>Reference Assembly Output" in *Add Reference* dialog
 2. Copy and include following files into your project (eventually merge with existing):
    - `NGitVersion\Resource\version.rc2` as *Resource Compiler*
-   - `NGitVersion\Resource\Assembly.cpp` (only for C++ CLI)
+   - `NGitVersion\Resource\Assembly.cpp` (embed .net metadata into C++ CLI Dlls, not relevant for native C++)
     
-3. Fix all TODO in both files, in particular the relative path to the generated `src\NGitVersion\GlobalAssemblyInfo.h` file.
+3. Fix all TODOs in both files, in particular the relative path to the generated `src\NGitVersion\Generated\GlobalAssemblyInfo.h` file.
 
 4. Build: Check that the built DLL contains the metadata defined in the generated `GlobalAssemblyInfo.h` file. 
 
