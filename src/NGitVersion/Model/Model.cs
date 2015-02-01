@@ -34,7 +34,7 @@ namespace NGitVersion.Model
         public string Product        { get { return "TODO Product"; } }
         public string Copyright      { get { return "TODO Copyright"; } }
         public string Trademark      { get { return "TODO Trademark"; } }
-        public string Culture        { get { return "TODO Culture"; } }
+        public string Culture        { get { return ""; } }
 
         public string Major          { get { return "0"; } } // TODO
         public string Minor          { get { return "0"; } } // TODO
