@@ -7,7 +7,7 @@ Out-of-the-box *NGitVersion* populates your DLLs with the following versions:
 
 - Assembly Version: `1.0.0.752`, where `752` is the *Git* auto-incremented version
 - Assembly Informational Version: `1.0.0.752, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True`, where:
-    - `Hash` is the git "short hash" of the local checked-out commit 
+    - `Hash` is the git "short hash" of the current commit 
     - `BuildConfig` is the build configuration (`DEBUG` / `RELEASE`)
     - `HasLocalChange` tells whether some file has been locally edited
 
