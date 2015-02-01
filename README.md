@@ -5,8 +5,10 @@ Auto-increment your DLL versions based on git history.
 
 Out-of-the-box *NGitVersion* populates your DLLs with the following versions:
 
-- Assembly Version: `1.0.0.752`, where `752` is the *Git* auto-incremented version
-- Assembly Informational Version: `1.0.0.752, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True`, where:
+![screenshot](/doc/screenshot/dll_version.PNG)
+
+- File Version: `1.0.0.34`, where `34` is the *Git* auto-incremented version
+- Product Version: `1.0.0.34, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True`, where:
     - `Hash` is the git "short hash" of the current commit 
     - `BuildConfig` is the build configuration (`DEBUG` / `RELEASE`)
     - `HasLocalChange` tells whether some file has been locally edited
