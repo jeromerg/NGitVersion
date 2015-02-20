@@ -83,8 +83,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy /Y "$(ProjectDir)..\..\NGitVersion\Generated\GlobalNativeAssemblyInfo.h" "$(ProjectDir)resource\"
-</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
