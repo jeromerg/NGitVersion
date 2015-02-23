@@ -1,3 +1,6 @@
+Current Status: 
+[![Build status](https://ci.appveyor.com/api/projects/status/is7mskdw71dirfsb/branch/master?svg=true)](https://ci.appveyor.com/project/jeromerg/ngitversion/branch/master)
+
 NGitVersion
 ===========
 
