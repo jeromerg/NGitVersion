@@ -20,7 +20,7 @@ namespace NGitVersion.Model
             mRepository = repository;
 
             mRevision = new Lazy<string>(() => mRepository.Commits.Count().ToString(CultureInfo.InvariantCulture));
-            mShortHash = new Lazy<string>(() => mRepository.Commits.Last().Sha.Substring(0, 7));
+            mShortHash = new Lazy<string>(() => mRepository.Commits.First().Sha.Substring(0, 7));
             mBranch = new Lazy<string>(() => mRepository.Head.CanonicalName);
             mHasLocalChange = new Lazy<string>(() => mRepository.RetrieveStatus().IsDirty.ToString(CultureInfo.InvariantCulture));
 #if DEBUG
