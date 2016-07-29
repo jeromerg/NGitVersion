@@ -12,8 +12,8 @@ namespace NGitVersion
         private const string MODEL_VAR = @"m";
 
         // directories are relative to output project directory ${ProjectDir}\bin
-        private const string TEMPLATE_DIR = @"..\..\Templates\";
-        private const string OUTPUT_DIR = @"..\..\Generated\";
+        private static string TEMPLATE_DIR = Path.Combine("..", "..", "Templates");
+        private static string OUTPUT_DIR = Path.Combine("..","..","Generated");
         private const string MAIN_TEMPLATE_NAME = @"MainTemplate";
 
         public static void Main(string[] args)
@@ -49,14 +49,14 @@ namespace NGitVersion
         private static string GetGitRoot()
         {
             const string gitDir = ".git";
-            string hierarchy = @".\";
+            string hierarchy = @"." + Path.DirectorySeparatorChar;
             while (true)
             {
                 bool exists = Directory.Exists(hierarchy + gitDir);
                 if (exists)
                     return hierarchy;
 
-                hierarchy = hierarchy + @"..\";
+                hierarchy = hierarchy + @".." + Path.DirectorySeparatorChar;
 
                 if (!Directory.Exists(hierarchy))
                     throw new ApplicationException("No .git folder found in the current path hierarchy");
