@@ -58,6 +58,8 @@ Typical issue: `Antlr4.StringTemplate` and `LibGit2Sharp` are not found: Fix the
 - Either search and fix `..\packages\` string within in the project file
 - Or remove/re-install nuget-dependencies `Antlr4.StringTemplate` and `LibGit2Sharp`
 
+Linux/mono issue: install 0.23-pre version of LibGit2Sharp with 'mono ~/bin/nuget/nuget.exe install LibGit2Sharp -Pre' to avoid dll not found errors.
+
 The build generates files into the `src\NGitVersion\Generated\` folder. Check that they exist and are properly generated from the templates located in `src\NGitVersion\Templates\`.
 
 ### Upgrade your projects
