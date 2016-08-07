@@ -66,7 +66,7 @@ namespace NGitVersion
         private static string BuildTargetFileName(string templateFile)
         {
             string outputFileName = Path.GetFileNameWithoutExtension(templateFile);
-            return Path.GetFullPath(OUTPUT_DIR + outputFileName);
+            return Path.GetFullPath( Path.Combine(OUTPUT_DIR, outputFileName) );
         }
     }
 }
