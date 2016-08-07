@@ -5,17 +5,11 @@ Current Status:
 NGitVersion
 ===========
 
-Auto-increment your DLL versions based on git history.
+Set DLL or executable versions based on git-describe.
 
-Out-of-the-box *NGitVersion* populates your DLLs with the following versions:
+The informational version is created by appending the build configuration to the git-describe result. If no tag is found in the repository, the short commit hash is used instead. The postfix '-dirty' is attached in either case if the repository contains local uncommited changes.
 
-![screenshot](/doc/screenshot/dll_version.PNG)
-
-- File Version: `1.0.0.34`, where `34` is the *Git* auto-incremented version
-- Product Version: `1.0.0.34, Hash b716d1b, BuildConfig DEBUG, HasLocalChange True`, where:
-    - `Hash` is the git "short hash" of the current commit 
-    - `BuildConfig` is the build configuration (`DEBUG` / `RELEASE`)
-    - `HasLocalChange` tells whether some file has been locally edited
+Additionaly, the output of git-describe is matched against the regular expression '([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)'. If it matches, major, minor, build and revision are set from the match. If it does not match, major, minor and build are set to 0 and revision is set to the number of commits since the initial commit.
 
 *NGitVersion* introduces a C# project called *NGitVersion* that generates on build two files `GLobalAssemblyInfo.cs` and `GLobalAssemblyInfo.cpp`. Just reference the *NGitVersion* project and `GlobalAssemblyInfo.*` files in your existing projects in order to get it work with your own DLLs.
 
