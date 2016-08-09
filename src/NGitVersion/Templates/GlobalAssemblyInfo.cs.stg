@@ -12,6 +12,6 @@ using System.Runtime.InteropServices;
 
 [assembly:AssemblyVersion                ("<m.Major>.<m.Minor>.<m.Build>.<m.Revision>")]
 [assembly:AssemblyFileVersion            ("<m.Major>.<m.Minor>.<m.Build>.<m.Revision>")]
-[assembly:AssemblyInformationalVersion   ("<m.Major>.<m.Minor>.<m.Build>.<m.Revision>, Hash <m.ShortHash>, BuildConfig <m.BuildConfig>, HasLocalChange <m.HasLocalChange>")]
+[assembly:AssemblyInformationalVersion   ("<m.Description>, BuildConfig <m.BuildConfig>")]
 
 >>

@@ -3,7 +3,7 @@ MainTemplate(m) ::= <<
 
 #define VERSION_COMA   <m.Major>,<m.Minor>,<m.Build>,<m.Revision>
 #define VERSION        "<m.Major>.<m.Minor>.<m.Build>.<m.Revision>"
-#define FULL_VERSION   "<m.Major>.<m.Minor>.<m.Build>.<m.Revision>, Hash <m.ShortHash>, BuildConfig <m.BuildConfig>, HasLocalChange <m.HasLocalChange>"
+#define FULL_VERSION   "<m.Description>, BuildConfig <m.BuildConfig>"
 #define COMPANY        "<m.Company>"
 #define PRODUCT        "<m.Product>"
 #define COPYRIGHT      "<m.Copyright>"
